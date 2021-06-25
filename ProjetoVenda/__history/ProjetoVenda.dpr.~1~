@@ -1,0 +1,17 @@
+program ProjetoVenda;
+
+uses
+  Vcl.Forms,
+  formVenda in 'formVenda.pas' {frmVenda},
+  uPedido in 'Units\uPedido.pas',
+  uDm in 'Conexao\uDm.pas' {dm: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmVenda, frmVenda);
+  Application.CreateForm(Tdm, dm);
+  Application.Run;
+end.

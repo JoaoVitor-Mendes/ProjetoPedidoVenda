@@ -1,0 +1,47 @@
+object formPesquisaCliente: TformPesquisaCliente
+  Left = 0
+  Top = 0
+  Caption = 'Pesquisa de Cliente'
+  ClientHeight = 405
+  ClientWidth = 837
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnPrincipal: TPanel
+    Left = 0
+    Top = 0
+    Width = 837
+    Height = 405
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 336
+    ExplicitTop = 200
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object dbgClientes: TDBGrid
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 829
+      Height = 397
+      Align = alClient
+      DataSource = dsCliente
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+    end
+  end
+  object dsCliente: TDataSource
+    Left = 400
+    Top = 88
+  end
+end

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/03/23 10:33:57.000.214,=C:\Users\user\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/09/03 17:19:14.000.677,=C:\Users\user\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/10/29 08:35:22.000.735,=C:\Users\user\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/11/13 09:30:06.000.855,=C:\Users\user\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/11/13 09:35:51.000.715,=C:\Users\user\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2021/06/23 16:45:44.000.564,=C:\Users\user\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2021/06/23 16:47:15.000.866,C:\Users\user\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\user\Desktop\Projeto Venda\formVenda.pas</Transaction>
+    <Transaction>2021/06/23 16:47:15.000.866,C:\Users\user\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\user\Desktop\Projeto Venda\formVenda.dfm</Transaction>
+    <Transaction>2021/06/23 16:47:27.000.971,C:\Users\user\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\user\Desktop\Projeto Venda\ProjetoVenda.dproj</Transaction>
+    <Transaction>2021/06/24 19:56:48.000.107,=C:\Projetos\Projeto Venda\Unit1.pas</Transaction>
+    <Transaction>2021/06/24 19:59:00.000.678,C:\Projetos\Projeto Venda\Units\uPedido.pas=C:\Projetos\Projeto Venda\Unit1.pas</Transaction>
+    <Transaction>2021/06/24 20:11:32.000.817,=C:\Projetos\Projeto Venda\Unit1.pas</Transaction>
+    <Transaction>2021/06/24 20:12:20.000.163,C:\Projetos\Projeto Venda\Conexao\uDm.pas=C:\Projetos\Projeto Venda\Unit1.pas</Transaction>
+    <Transaction>2021/06/24 20:12:20.000.163,C:\Projetos\Projeto Venda\Conexao\uDm.dfm=C:\Projetos\Projeto Venda\Unit1.dfm</Transaction>
+    <Transaction>2021/06/24 22:44:15.000.860,=C:\Projetos\Projeto Venda\Unit1.pas</Transaction>
+    <Transaction>2021/06/24 22:44:30.000.825,C:\Projetos\Projeto Venda\Pesquisas\frmPesquisaCliente.dfm=C:\Projetos\Projeto Venda\Unit1.dfm</Transaction>
+    <Transaction>2021/06/24 22:44:30.000.825,C:\Projetos\Projeto Venda\Pesquisas\frmPesquisaCliente.pas=C:\Projetos\Projeto Venda\Unit1.pas</Transaction>
+    <Transaction>2021/06/24 22:53:18.896,=C:\Projetos\ProjetoVenda\Unit1.pas</Transaction>
+    <Transaction>2021/06/24 22:53:35.033,C:\Projetos\ProjetoVenda\Units\uPedido.pas=C:\Projetos\ProjetoVenda\Unit1.pas</Transaction>
+    <Transaction>2021/06/24 23:36:17.589,=C:\Projetos\ProjetoVenda\Unit1.pas</Transaction>
+    <Transaction>2021/06/24 23:40:46.009,C:\Projetos\ProjetoVenda\Pesquisas\frmPesquisaProduto.dfm=C:\Projetos\ProjetoVenda\Unit1.dfm</Transaction>
+    <Transaction>2021/06/24 23:40:46.009,C:\Projetos\ProjetoVenda\Pesquisas\frmPesquisaProduto.pas=C:\Projetos\ProjetoVenda\Unit1.pas</Transaction>
+    <Transaction>2021/06/25 01:50:58.808,=C:\Projetos\ProjetoVenda\Unit1.pas</Transaction>
+    <Transaction>2021/06/25 01:51:18.572,C:\Projetos\ProjetoVenda\Pesquisas\frmPesquisaPedido.dfm=C:\Projetos\ProjetoVenda\Unit1.dfm</Transaction>
+    <Transaction>2021/06/25 01:51:18.572,C:\Projetos\ProjetoVenda\Pesquisas\frmPesquisaPedido.pas=C:\Projetos\ProjetoVenda\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,193 @@
+unit uPedido;
+
+interface
+
+uses
+  FireDAC.Comp.Client, System.SysUtils,System.Classes, uDm,
+  Datasnap.DBClient;
+
+type
+  TPedido = class
+
+  private
+    query: TFDQuery;
+  
+    function pConectaBanco() : boolean;
+
+
+  public
+    constructor Create();
+    destructor Destroy(); Override;
+
+    function RetornaTodosClientes() : TFDQuery;
+    function RetornaTodosProdutos() : TFDQuery; 
+
+    function RetornaClientePorId(idCliente : String)  : TFDQuery; 
+    function RetornaProdutoPorId(idProduto : String)  : TFDQuery; 
+
+    function IncluiNovoPedido(idCliente : Integer) : String;
+  
+
+
+  end;
+
+
+implementation
+
+{ TPedido }
+
+constructor TPedido.Create;
+begin
+  pConectaBanco();
+end;
+
+destructor TPedido.Destroy;
+begin
+
+  inherited;
+end;
+
+function TPedido.IncluiNovoPedido(idCliente : Integer) : String;
+var
+  cdPedido: Integer;
+begin
+  try
+    query := TFDQuery.Create(nil);
+    query.Connection := dm.Conexao;
+
+    query.Close;
+    query.SQL.Clear;
+    query.SQL.Add('SELECT MAX(CD_PEDIDO) CD_PEDIDO FROM PEDIDOS_GERAIS');
+    query.Open;
+    
+    cdPedido := query.FieldByName('CD_PEDIDO').AsInteger + 1;
+
+    query.Close;
+    query.SQL.Clear;
+    query.SQL.Add('INSERT INTO PEDIDOS_GERAIS(CD_PEDIDO, DATA_EMISSAO, ID_CLIENTE, VALOR_TOTAL)');
+    query.SQL.Add('VALUES(:CD_PEDIDO, :DATA_EMISSAO, :ID_CLIENTE, :VALOR_TOTAL)');
+    query.Params.ParamByName('').AsInteger := cdPedido;
+    query.Params.ParamByName('').AsDate    := Now; 
+    query.Params.ParamByName('').AsInteger := idCliente; 
+    query.Params.ParamByName('').AsFloat   := 0;             
+    query.ExecSQL;
+    
+  except on E: Exception do
+    begin
+      raise Exception.Create(E.ToString);
+      Abort;
+    end;
+  end;
+
+  Result := query.FieldByName('c;
+end;
+
+function TPedido.pConectaBanco: boolean;
+begin
+
+  try
+    dm.Conexao.Connected               := False;
+    dm.Conexao.Params.UserName         := 'root';
+    dm.Conexao.Params.Password         := '';
+    dm.Conexao.Params.Database         := 'bdpedido';
+    dm.Conexao.Params.Values['Server'] := '127.0.0.1';
+    dm.Conexao.Params.Values['Port']   := '3306';
+    dm.Conexao.Connected               := True;
+
+    Result := True;
+
+  except on E: Exception do
+    Result := False;
+  end;
+end;
+
+function TPedido.RetornaClientePorId(idCliente : string): TFDQuery;
+begin
+  try
+    query := TFDQuery.Create(nil);
+    query.Connection := dm.Conexao;
+
+    query.Close;
+    query.SQL.Clear;
+    query.SQL.Add('SELECT * FROM CLIENTES WHERE CD_CLIENTE = '+idCliente);
+    query.Open;
+    
+  except on E: Exception do
+    begin
+      raise Exception.Create(E.ToString);
+      Abort;
+    end;
+  end;
+
+  Result := query;
+end;
+
+function TPedido.RetornaProdutoPorId(idProduto : string): TFDQuery;
+begin
+  query := TFDQuery.Create(nil);
+  query.Connection := dm.Conexao;
+
+  try
+    query.Close;
+    query.SQL.Clear;
+    query.SQL.Add('SELECT * FROM PRODUTOS WHERE CD_PRODUTO = '+idProduto);
+    query.Open;
+    
+  except on E: Exception do
+    begin
+      raise Exception.Create(E.ToString);
+      Abort;
+    end;
+  end;
+
+  Result := query;
+end;
+
+function TPedido.RetornaTodosClientes: TFDQuery;
+var
+  cdsTemp: TClientDataSet;
+begin
+
+  try
+    query := TFDQuery.Create(nil);
+    query.Connection := dm.Conexao;
+  
+    query.Close;
+    query.SQL.Clear;
+    query.SQL.Add('SELECT * FROM CLIENTES');
+    query.Open;
+    
+  except on E: Exception do
+    begin
+      raise Exception.Create(E.ToString);
+      Abort;
+    end;
+  end;
+
+  Result := query;
+end;
+
+function TPedido.RetornaTodosProdutos: TFDQuery;
+begin
+
+  try
+    query := TFDQuery.Create(nil);
+    query.Connection := dm.Conexao;
+    
+    query.Close;
+    query.SQL.Clear;
+    query.SQL.Add('SELECT * FROM PRODUTOS');
+    query.Open;
+    
+  except on E: Exception do
+    begin
+      raise Exception.Create(E.ToString);
+      Abort;
+    end;
+  end;
+
+  Result := query;
+end;
+
+end.
+

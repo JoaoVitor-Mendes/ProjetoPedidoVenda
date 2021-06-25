@@ -1,0 +1,25 @@
+object dm: Tdm
+  OldCreateOrder = False
+  Height = 281
+  Width = 464
+  object Conexao: TFDConnection
+    Params.Strings = (
+      'Database=bdpedido'
+      'User_Name=root'
+      'Server=127.0.0.1'
+      'DriverID=MySQL')
+    LoginPrompt = False
+    Left = 56
+    Top = 24
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 56
+    Top = 152
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorLib = 'C:\Projetos\ProjetoVenda\libmysql.dll'
+    Left = 56
+    Top = 88
+  end
+end

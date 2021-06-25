@@ -1,0 +1,51 @@
+unit frmPesquisaCliente;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uPedido, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ExtCtrls, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
+
+type
+  TformPesquisaCliente = class(TForm)
+    pnPrincipal: TPanel;
+    dbgClientes: TDBGrid;
+    dsClientes: TDataSource;
+    qClientes: TFDQuery;
+    qClientescd_cliente: TIntegerField;
+    qClientesnome: TVarBytesField;
+    qClientescidade: TVarBytesField;
+    qClientesuf: TVarBytesField;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formPesquisaCliente: TformPesquisaCliente;
+
+implementation
+
+{$R *.dfm}
+
+procedure TformPesquisaCliente.FormShow(Sender: TObject);
+var
+  Pedido: TPedido;
+begin
+  Pedido := TPedido.Create();
+
+  qClientes := Pedido.RetornaTodosClientes;
+
+  qClientes.Open;
+
+
+
+end;
+
+end.
